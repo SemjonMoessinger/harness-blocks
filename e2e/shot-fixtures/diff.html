@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Visual comparison</title>
+    <style>
+      body { font-family: sans-serif; color: #111; background: #fff; margin: 0; }
+      .target { height: 200px; margin: 2rem; background: #1a4d2e; }
+      .target.v2 { background: #a1682b; }
+      .spacer { height: 1600px; }
+      .price { margin: 2rem; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Comparison</h1>
+      <section class="target"></section>
+      <p class="price">Price: 120 €</p>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const target = document.querySelector('.target');
+      if (params.get('v') === '2') target.classList.add('v2');
+      // ?price changes one digit: a few dozen pixels, the smallest edit an agent makes.
+      if (params.has('price')) document.querySelector('.price').textContent = `Price: ${params.get('price')} €`;
+      // ?tall pushes the target below the fold, where a --full shot has to scroll to find it.
+      if (params.has('tall')) target.before(Object.assign(document.createElement('div'), { className: 'spacer' }));
+    </script>
+  </body>
+</html>

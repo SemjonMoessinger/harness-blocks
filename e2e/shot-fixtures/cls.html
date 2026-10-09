@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Jumping page</title>
+    <style>
+      body { font-family: sans-serif; color: #111; background: #fff; margin: 0; }
+      .banner { height: 120px; background: #1a4d2e; color: #fff; padding: 1rem; }
+      .pushed { padding: 1rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="pushed">
+        <h1>Content</h1>
+        <p>This section slides down as soon as the banner appears.</p>
+      </section>
+      <img class="lazy" src="/block.svg?delay=150" alt="Image without a fixed size">
+      <p class="below">Below the image</p>
+    </main>
+    <script>
+      setTimeout(() => {
+        const banner = document.createElement('div');
+        banner.className = 'banner';
+        banner.textContent = 'Cookie notice';
+        document.body.prepend(banner);
+      }, 300);
+    </script>
+  </body>
+</html>

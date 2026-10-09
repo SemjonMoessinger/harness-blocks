@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Text leftovers</title>
+    <style>
+      body { font-family: sans-serif; color: #111; background: #fff; }
+      .product-name { display: block; width: 8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="nav.main.open"><a href="/text.html">Home</a></nav>
+    <main>
+      <p class="greeting">Hello undefined, welcome back</p>
+      <p class="price">NaN €</p>
+      <p class="object">[object Object]</p>
+      <p class="template">{{ user.name }}</p>
+      <h3 class="plan-name">pricing.plan.title</h3>
+      <p class="neg-null">There are null results.</p>
+      <p class="neg-www">Visit www.example.com</p>
+      <p class="neg-mail">Write to mail@example.org</p>
+      <p class="neg-version">Version 1.2.3</p>
+      <span class="product-name">Ergonomic office chair with armrests</span>
+      <label>Category <input class="category" type="text"></label>
+      <label>Note <textarea class="note"></textarea></label>
+      <label>Password <input class="secret" type="password"></label>
+    </main>
+    <script>
+      // Properties, not attributes — the way a framework writes a form value.
+      document.querySelector('.category').value = String({});
+      document.querySelector('.note').value = 'Hello undefined';
+      document.querySelector('.secret').value = 'undefined';
+    </script>
+  </body>
+</html>

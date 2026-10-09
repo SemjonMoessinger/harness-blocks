@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to .mcp.json at the repo root to give Claude Code the Playwright MCP server. Use it to explore an unknown path; once the path is known, put it in a script (docs/browser-testing.md). The server keeps one persistent browser profile per repo, so a second session in the same repo fails with `Browser is already in use`; add `--isolated` to args for an empty throwaway profile.",
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}

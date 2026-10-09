@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Broken markup</title>
+  </head>
+  <body>
+    <main>
+      <h1>Broken markup</h1>
+      <label for="email">E-mail</label>
+      <input id="email" type="email">
+      <p id="email">Duplicate ID</p>
+      <input type="nonsense" aria-label="Unknown type">
+      <a class="card" href="/html.html">Card</a>
+    </main>
+    <script>
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = 'Inside the link';
+      document.querySelector('a.card').append(button);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Clean page</title>
+    <style>
+      body { font-family: sans-serif; color: #111; background: #fff; margin: 0; }
+      header, main, footer { padding: 1rem 2rem; }
+      a { color: #0645ad; }
+      button { font: inherit; padding: 0.5rem 1rem; color: #fff; background: #1a4d2e; border: 0; }
+      .cdk-visually-hidden {
+        position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
+        overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Main navigation">
+        <a href="/clean.html">Home</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Projects</h1>
+      <p>The release on 12 October still needs a reviewer. There are null results near you.</p>
+      <p>More at www.example.com or by mail to mail@example.org, Version 1.2.3, App v2.4.1.</p>
+      <img src="/block.svg" alt="Cover image" width="120" height="80">
+      <form action="/clean.html">
+        <label for="postcode">Postcode</label>
+        <input id="postcode" name="postcode" type="text" placeholder="e.g. 10115">
+        <button type="submit">Search</button>
+      </form>
+      <div class="cdk-visually-hidden" aria-live="polite">Search saved</div>
+    </main>
+    <footer>
+      <p>Imprint</p>
+    </footer>
+  </body>
+</html>

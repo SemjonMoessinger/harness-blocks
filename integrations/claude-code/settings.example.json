@@ -1,0 +1,21 @@
+{
+  "_comment": "Merge into .claude/settings.json. The allow list lets an agent run the harness without a permission prompt per call; the exact prefix form matters, `cd e2e && npm run shot` would prompt again. Adjust the deny list to the secrets of your project.",
+  "permissions": {
+    "allow": [
+      "Bash(npm run shot --prefix e2e:*)",
+      "Bash(npm run shot:selftest --prefix e2e:*)",
+      "Bash(npm run doctor --prefix e2e:*)",
+      "Bash(npm run typecheck --prefix e2e:*)",
+      "Bash(npm run lint --prefix e2e:*)",
+      "Bash(npm run test --prefix e2e:*)",
+      "Bash(npm run test:coverage --prefix e2e:*)",
+      "Bash(npm run coverage:gaps --prefix e2e:*)",
+      "Bash(node e2e/tmp/*.ts:*)"
+    ],
+    "deny": [
+      "Read(*.env)",
+      "Read(*.env.*)",
+      "Read(e2e/.auth/**)"
+    ]
+  }
+}

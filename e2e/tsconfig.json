@@ -1,0 +1,33 @@
+{
+  // Nothing here emits JavaScript. The specs are transpiled by the Playwright runner,
+  // and shot.ts / seed.ts are run by node directly, which strips types natively
+  // (Node >= 23.6). tsc's only job in this project is `npm run typecheck`.
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ESNext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    // page.evaluate() callbacks run in the browser, so DOM types are needed alongside
+    // node's in the very same file.
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+
+    // Node resolves the import specifier it is given, so relative imports must carry
+    // the real ".ts" extension rather than a compiled ".js" one.
+    "allowImportingTsExtensions": true,
+
+    // Both guard the contract with node's native stripping: erasableSyntaxOnly rejects
+    // enum/namespace/parameter properties, which node cannot strip; verbatimModuleSyntax
+    // forces `import type` so a type-only import is never left behind as a runtime
+    // require of @playwright/test in a file plain node has to execute.
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true
+  },
+  "include": ["*.ts", "shot-fixtures/*.ts", "tests/**/*.ts"]
+}

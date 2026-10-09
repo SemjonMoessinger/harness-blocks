@@ -1,0 +1,34 @@
+{
+  "name": "harness-blocks-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "shot": "node shot.ts",
+    "shot:selftest": "node shot.selftest.ts",
+    "doctor": "node doctor.ts",
+    "seed": "node seed.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:coverage": "playwright test --config playwright.coverage.config.ts",
+    "coverage:gaps": "node coverage-gaps.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^26.1.1",
+    "@types/pngjs": "^6.0.5",
+    "eslint": "^10.2.0",
+    "html-validate": "^11.16.1",
+    "monocart-coverage-reports": "^2.13.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.58.2"
+  }
+}

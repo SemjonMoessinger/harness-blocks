@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Footer pushed away</title>
+    <style>
+      body { font-family: sans-serif; color: #111; background: #fff; margin: 0; }
+      .app-footer { height: 64px; background: #1a4d2e; color: #fff; }
+      .content { height: 1200px; }
+    </style>
+  </head>
+  <body>
+    <h1>The route is loading</h1>
+    <!-- The framework's first class names the component; the second one is the app's. -->
+    <div class="mat-toolbar app-footer">Footer</div>
+    <script>
+      // The lazy route arriving: the footer, visible until now, is pushed below the fold.
+      setTimeout(() => {
+        const content = document.createElement('main');
+        content.className = 'content';
+        document.querySelector('.app-footer').before(content);
+      }, 300);
+    </script>
+  </body>
+</html>
